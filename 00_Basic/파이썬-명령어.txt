@@ -1,0 +1,13 @@
+python -v
+python3 -v
+
+python -m venv myvenv  : 가상환경 생성
+myvenv\Scripts\activate : 가상환경 진입
+deactivate : 가상환경 벗어나기
+
+pip install openai
+
+
+
+주피터 컴퓨터  : p 29 .jpynb  [ 주피터 파이썬 노트북]
+파이썬 가상환경 
