@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>download_link</title>
+</head>
+<body>
+    <h2>Just View Image</h2>
+    <a href="./image/paris.jpg">
+        <img src="./image/paris.jpg" alt="paris image" width="100">
+    </a>
+
+
+    <!-- 웹 서버 환경에서만 다운로드  -->
+    <h2>Download Image</h2>
+    <a href="./image/paris.jpg" download="aaa.jpg"> 
+        <!-- download 할때 사용할 파일이름 , 웹 서버에서만 동작-->
+        <img src="./image/paris.jpg" alt="paris image" width="100">
+    </a>
+</body>
+</html>
