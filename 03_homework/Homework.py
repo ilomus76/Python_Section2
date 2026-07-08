@@ -111,17 +111,15 @@ from urllib import request, parse
 data = { 'title': '안녕하세요', 'msg':'반가워요. 잘되어야 하는데'}
 encoded_data = parse.urlencode(data).encode('utf-8')
 
-# url='https://mbca2026aix.dothome.co.kr/webdata/ccc.php'
-# req = request.Request(url,data=encoded_data,method='POST')
-# #요청 보내고 받는 작업을 예외처리까지 해서..
-# import urllib.error 
-# try: 
-#     with request.urlopen(req) as response:
-#         response_body = response.read().decode('utf-8')
-#         print(f'Status: {response.status} ')  #200 403 404
-#         print(f'Body: {response_body}') # 응답 데이터
-# except urllib.error.URLError as e:
-#     print(f'Error: {e}')
+url='https://mbca2026aix.dothome.co.kr/webdata/ccc.php'
+req = request.Request(url,data=encoded_data,method='POST')
+#요청 보내고 받는 작업을 예외처리까지 해서..
+import urllib.error 
+try: 
+    with request.urlopen(req) as response:
+        response_body = response.read().decode('utf-8')
+        print(f'Status: {response.status} ')  #200 403 404
+        print(f'Body: {response_body}') # 응답 데이터
+except urllib.error.URLError as e:
+    print(f'Error: {e}')
 
-print(data)
-print(parse.urlencode(data))

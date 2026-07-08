@@ -1,0 +1,90 @@
+GET 방식의 원리
+GET은 데이터를 URL 뒤(Query String) 에 붙여서 보냅니다.
+
+예를 들어
+
+data = {
+    'title': '제목',
+    'msg': 'message'
+}
+
+이 데이터를 GET으로 보내려면
+
+https://example.com/ccc.php?title=제목&msg=message
+
+와 같은 형태가 되어야 합니다.
+실제로는 한글이 URL 인코딩되어 전송됩니다.
+
+urllib에서 GET 방식
+from urllib import request, parse
+
+url = "https://example.com/ccc.php"
+data = {
+    'title': '제목',
+    'msg': 'message'
+}
+
+query = parse.urlencode(data)
+
+req = request.Request(
+    url + "?" + query,
+    method="GET"
+)
+
+response = request.urlopen(req)
+
+print(response.read().decode("utf-8"))
+
+여기서는 data=를 사용하지 않습니다.
+
+POST 방식
+
+반대로 POST는 데이터를 Body에 담습니다.
+
+from urllib import request, parse
+
+url = "https://example.com/ccc.php"
+
+data = {
+    'title': '제목',
+    'msg': 'message'
+}
+
+encoded_data = parse.urlencode(data).encode("utf-8")
+
+req = request.Request(
+    url,
+    data=encoded_data,
+    method="POST"
+)
+왜 GET에서 data를 쓰지 않을까요?
+
+HTTP의 규약상(GET의 의미상) GET 요청은 리소스를 조회하는 요청이며, 요청 데이터는 일반적으로 URL의 쿼리 문자열로 전달합니다.
+
+일부 라이브러리나 서버는 GET 요청에 Body를 넣는 것을 허용하기도 하지만, 대부분의 웹 서버와 프레임워크는 GET Body를 무시하거나 지원하지 않습니다.
+
+그래서 Python에서도 GET 요청은 다음과 같이 작성하는 것이 올바른 방법입니다.
+
+GET → URL에 ?key=value&...를 붙인다.
+POST → data=에 데이터를 넣는다.
+requests에서는 더 간단합니다.
+
+requests 라이브러리를 사용하면 URL을 직접 만들 필요도 없습니다.
+
+import requests
+
+data = {
+    'title': '제목',
+    'msg': 'message'
+}
+
+response = requests.get(url, params=data)
+
+params=를 사용하면 내부적으로 parse.urlencode()를 수행하여 다음과 같은 URL을 자동으로 만들어 줍니다.
+
+https://example.com/ccc.php?title=%EC%A0%9C%EB%AA%A9&msg=message
+
+즉,
+
+urllib → 직접 urlencode()로 URL을 만들어야 함.
+requests → params=만 사용하면 자동으로 처리됨.
