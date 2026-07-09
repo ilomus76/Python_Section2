@@ -13,7 +13,7 @@
     $file_name= $file['name'];
     $temp_name= $file['tmp_name'];
 
-    $upload_dir = './uploads/';
+    $upload_dir = './uploads/';      # 반드시 서버에 이 폴더가 존재해야 함.
     $dst_name = $upload_dir . date('Ymd') . $file_name;
 
     if (move_uploaded_file($temp_name, $dst_name)) echo "업로드 성공 \n";

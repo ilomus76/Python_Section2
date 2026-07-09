@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c91ae15fdc3cc2694409799c9947d409 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_c91ae15fdc3cc2694409799c9947d409" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c91ae15fdc3cc2694409799c9947d409 = L.map(
+                "map_c91ae15fdc3cc2694409799c9947d409",
+                {
+                    center: [37.55, 126.99],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_09ef03e13bc2df795add2690bba19269 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_09ef03e13bc2df795add2690bba19269.addTo(map_c91ae15fdc3cc2694409799c9947d409);
+        
+    
+            var tile_layer_a5216248722303c1b0f2f4bf6800f4f3 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detect_retina": false, "max_native_zoom": 19, "max_zoom": 19, "min_zoom": 0, "no_wrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_0b22ef0b2a2147d902e7af98d5d9f717 = new L.Control.MiniMap(
+                tile_layer_a5216248722303c1b0f2f4bf6800f4f3,
+                {
+  "position": "bottomright",
+  "width": 150,
+  "height": 150,
+  "collapsedWidth": 25,
+  "collapsedHeight": 25,
+  "zoomLevelOffset": -5,
+  "centerFixed": false,
+  "zoomAnimation": false,
+  "toggleDisplay": false,
+  "autoToggleDisplay": false,
+  "minimized": false,
+}
+            );
+            map_c91ae15fdc3cc2694409799c9947d409.addControl(mini_map_0b22ef0b2a2147d902e7af98d5d9f717);
+        
+    
+            var marker_623da7f50957060f29837ff1e7d61317 = L.marker(
+                [37.55, 126.99],
+                {
+}
+            ).addTo(map_c91ae15fdc3cc2694409799c9947d409);
+        
+    
+        var popup_25c183775f4eb8d9c8635a947613cfbd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_acaee7c273a0a513fb5718b212d51a81 = $(`<div id="html_acaee7c273a0a513fb5718b212d51a81" style="width: 100.0%; height: 100.0%;"><b>클릭하면 보이는 팝업창</b></div>`)[0];
+                popup_25c183775f4eb8d9c8635a947613cfbd.setContent(html_acaee7c273a0a513fb5718b212d51a81);
+            
+        
+
+        marker_623da7f50957060f29837ff1e7d61317.bindPopup(popup_25c183775f4eb8d9c8635a947613cfbd)
+        ;
+
+        
+    
+    
+            marker_623da7f50957060f29837ff1e7d61317.bindTooltip(
+                `<div>
+                     서울역(마커에 마우스를 올리면 보여짐)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2e4c308ffe47c95b7ae847f7ab150cfe = L.marker(
+                [37.54706945947954, 127.04740975332888],
+                {
+}
+            ).addTo(map_c91ae15fdc3cc2694409799c9947d409);
+        
+    
+            var marker_fb02b660fdf8ba29cdce54cc0b69fec4 = L.marker(
+                [37.54706945947954, 127.04740975332888],
+                {
+}
+            ).addTo(map_c91ae15fdc3cc2694409799c9947d409);
+        
+    
+        var popup_4ead45850ee4806a22ea07bc4f984b6f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var i_frame_819198f4d28f284dfdab77ae2d0269fa = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICA8ZGl2PuyEseyImOyXrS3sl6zquLDsl5Ag6ri0IOuCtOyaqeydhCDsjajrj4Qg7IS466Gc66GcIOuCmOyYpOyngCDslYrsirXri4jri6QuPC9kaXY+" width="250" style="border:none !important;" height="50"></iframe>`)[0];
+                popup_4ead45850ee4806a22ea07bc4f984b6f.setContent(i_frame_819198f4d28f284dfdab77ae2d0269fa);
+            
+        
+
+        marker_fb02b660fdf8ba29cdce54cc0b69fec4.bindPopup(popup_4ead45850ee4806a22ea07bc4f984b6f)
+        ;
+
+        
+    
+    
+            var marker_2305a475f70d187397c8b7bb79699483 = L.marker(
+                [37.54041716624373, 127.06914637466906],
+                {
+}
+            ).addTo(map_c91ae15fdc3cc2694409799c9947d409);
+        
+    
+            var icon_d407b7686bc9ebaba3b8d5e0f5d7f5d3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "heart",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6ff72ab96529b3e7ee39d5cc0bdeeb62 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8ef088882f0399f3665141d92fbf80a0 = $(`<div id="html_8ef088882f0399f3665141d92fbf80a0" style="width: 100.0%; height: 100.0%;"><b>subway</b></div>`)[0];
+                popup_6ff72ab96529b3e7ee39d5cc0bdeeb62.setContent(html_8ef088882f0399f3665141d92fbf80a0);
+            
+        
+
+        marker_2305a475f70d187397c8b7bb79699483.bindPopup(popup_6ff72ab96529b3e7ee39d5cc0bdeeb62)
+        ;
+
+        
+    
+    
+            marker_2305a475f70d187397c8b7bb79699483.bindTooltip(
+                `<div>
+                     <i>건대입구역</i>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2305a475f70d187397c8b7bb79699483.setIcon(icon_d407b7686bc9ebaba3b8d5e0f5d7f5d3);
+            
+    
+            var marker_07137f4e79d9bf10c66f18a0089b1e12 = L.marker(
+                [37.5614, 127.0385],
+                {
+}
+            ).addTo(map_c91ae15fdc3cc2694409799c9947d409);
+        
+    
+            var icon_6cb4f614e87c6b7ac5aa5a760367f554 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "yellow",
+  "icon": "flag",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3286726f38206836065382d1d9e778a3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0ff20d0f7a390c94751bd4aa61e8a520 = $(`<div id="html_0ff20d0f7a390c94751bd4aa61e8a520" style="width: 100.0%; height: 100.0%;"><a href="https://www.naver.com" target="_blank">네이버로 이동</a></div>`)[0];
+                popup_3286726f38206836065382d1d9e778a3.setContent(html_0ff20d0f7a390c94751bd4aa61e8a520);
+            
+        
+
+        marker_07137f4e79d9bf10c66f18a0089b1e12.bindPopup(popup_3286726f38206836065382d1d9e778a3)
+        ;
+
+        
+    
+    
+            marker_07137f4e79d9bf10c66f18a0089b1e12.bindTooltip(
+                `<div>
+                     <b>왕십리역</b>
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_07137f4e79d9bf10c66f18a0089b1e12.setIcon(icon_6cb4f614e87c6b7ac5aa5a760367f554);
+            
+    
+            tile_layer_09ef03e13bc2df795add2690bba19269.addTo(map_c91ae15fdc3cc2694409799c9947d409);
+        
+    
+                marker_2305a475f70d187397c8b7bb79699483.setIcon(icon_d407b7686bc9ebaba3b8d5e0f5d7f5d3);
+            
+    
+                marker_07137f4e79d9bf10c66f18a0089b1e12.setIcon(icon_6cb4f614e87c6b7ac5aa5a760367f554);
+            
+</script>
+</html>

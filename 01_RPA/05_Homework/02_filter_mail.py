@@ -31,5 +31,6 @@ with MailBox('imap.gmail.com',993).login(EMAIL_ADDRESS,EMAIL_PASSWORD,initial_fo
             count +=1
             content[count]['보낸사람']=msg.from_ 
             content[count]['보낸사람']=msg.from_
+            
 
         
