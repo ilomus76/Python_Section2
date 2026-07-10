@@ -47,8 +47,6 @@ config=types.GenerateContentConfig(
 
 client = genai.Client(api_key='GOOGLE_API_KEY')  #https://aistudio.google.com/api-keys
 
-
-
 response = client.models.generate_content( # 텍스트를 생성해주는 함수 , 응답이 옴
     model='gemini-3.5-flash', 
     contents= "2026년 자동차 이미지 센서 업계 동향은?",

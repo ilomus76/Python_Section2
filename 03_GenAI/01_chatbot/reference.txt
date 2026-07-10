@@ -1,0 +1,3 @@
+openAI API reference
+
+https://developers.openai.com/api/reference/overview
