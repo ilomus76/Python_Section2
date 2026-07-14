@@ -1,0 +1,7 @@
+pip install openai     # openai 를 사용하기 위해서 라이브러리 설치필수 
+pip install dotenv     # openai 의 api_key 를 저장해 둔 환경변수 파일에서 키를 가져오기 
+pip install streamlit  # 파이썬에서 웹페이지 만드는 라이브러리
+pip list               # 설치된 라이브러리 확인하기 
+
+
+
