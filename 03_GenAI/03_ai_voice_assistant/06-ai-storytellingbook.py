@@ -43,7 +43,24 @@ def generate_content(stroy, decisionQuestion,choices: list, image,oid):
 def main():
     #타이틀 설정
     st.title(f"NOVEL GPT")
-    pass
+    #스토리 전개 시 각 part의 제이터를 저장할 리스트 
+    if 'data_dict' not in st.session_state:
+        st.session_state['data_dic']={}
+    
+    #문자열 난수를 저장할 문자열 리스트 , 각각의 난수는 각 Part의 키 값 역할 
+    if 'oid_list' not in st.session_state:
+        st.session_state['oid_list'] = {}
+
+    #사용자가 OpenAI API 키 값을 작성하면 저장할 변수
+    if 'open_api_key' not in st.session_state:
+        st.session_state['open_api_key']=''
+    
+    #OpenAI API 키 값 작성칸의 활성화 여부. 입력되기 전에는 활성화(False)
+    if 'apiBox_stage' not in st.session_state:
+        st.session_state['apiBox_stage']=False
+
+    #사용자가 첫 시작 시 제목을 작성하면 저장할 변수
+    if 'genre_input' not in st.session
 
 if __name__ == "__main__":
     main()
