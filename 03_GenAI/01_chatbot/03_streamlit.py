@@ -1,19 +1,5 @@
-# streamlit 사이트 : https://streamlit.io/     : 이쁘게 web을 만들수 있는 사이트
-# streamlit을 사용하면 좋은점이 배포도 할수 있지만 HTML에 iframe 에 넣어 그 안에 끼어 넣을 수도 있다.
-# 실제로 streamlit을 사용할때 그것을 streamlit 클라우드에 올리면 그 코드를 바로 실행해 주는데 그 link 주소를 가지고 실행할수도 있다.
-# 즉 ppt 자료에 그 링크를 넣으면 그 링크를 클릭해서 데이타 시각화로 바로 보여 줄 수 있다. 
-
-
 #streamlit : python으로 간단한 웹페이지를 만들 수 있은 고수준 모듈 - 고수준 : 편하다 . 자동화 되어있다..(대신 커스텀이 제한적이어서 실무에서의 사용은 제한적. 프로토타입에 많이 사용됨.)
 #우리는 프로토타입이라 간단하게 만들것이다.
-
-
-
-# 주피터 컴퓨터는 나의 컴퓨터 리소스 즉 CPU, GPU를 사용하는 것이고 CoLab은 클라우드 환경의 CPU, GPU의 자원을 사용하는 것이다 . 
-# 주피터는 VS 코드와 같은 편집기이고 VS code는 파일을 이용해서 실행하지만 주피터 편집기는 셀단위로 한줄 두줄 세줄등의 코드 실행을 한다 . 그리고 실행 및 그 결과까지 저장해 준다. 
-# Colab도 VS 코드 기반의 편집기인데 구글 것이고 웹환경에서 돌아가는 편집기이다. 즉 나의 컴퓨터 자원을 사용하는 것이 아니고 클라우드 상에 있는 CPU,GPU를 기반으로 돌아가는 편집기이다. 
-
-
 
 #0. 모듈 설치
 #pip install streamlit
@@ -98,7 +84,7 @@ st.latex(r'c = \sqrt{a^{2}+b^{2}}',width='content')
 st.latex(r'\sigma(x) = \frac{1}{1 + e^{-x}}')   # r : 리버스  , \를 못알아보니. r 
 
 #기본적으로 streamlit글시를 색상을 지정하는 문법이 없음. 
-# 대신 글씨의 성질에 따라 다른 색상으로 표시하는 기능이 있음.
+# 대신 글씨의 성질에 따라 다른 색상ㅇ르로 표시하는 기능이 있음.
 st.success('정상 처리 완료')
 st.warning('주의 필요')
 st.error('에러발생')
@@ -116,8 +102,8 @@ name = st.text_input('이름을 입력하세요.') #enter를 치면 입력돼ㅣ
 st.write(f"입력된 이름 :{name}")
 st.divider()
 
-# #2) 숫자 입력
-# age = st.number_input('나이를 입력하세요.') # 소숫점 단위
+#2) 숫자 입력
+# age = st.number_input('나이를 입력하세요.')
 age = st.number_input('나이를 입력하세요.',min_value=0,max_value=100,step=1)
 st.write(f"입력된 나이: {age}")
 st.divider()
@@ -163,7 +149,7 @@ if file_list is not None:
     st.write("업로드된 파일 개수:",len(file_list))
     #각 파일명을 출력하고 싶다면.. file_list의 요소(file)들의 .name을 출력
     # st.info([10,20,30])
-    st.info([f.name for f in file_list]) # 리스트의 컴프리헨션... 리스트 내포. 반복문을 가져와서 그것의 이름으로 나열하라... 그리고 배열[리스트]을 만들어라.
+    st.info([f.name for f in file_list]) # 리스트의 컴프리헨션... 리스트 내포. 반복문을 가져와서 그것의 이름으로 나열하라... 
 st.divider()
 
 
@@ -171,7 +157,7 @@ st.divider()
 color = st.color_picker('색상을 선택하세요.',value="#00FF00")
 st.write(f"선택한 색상:{color}")
 st.divider()
-# #---------------------------------
+#---------------------------------
 
 #7. 버튼 및 선택형 입력
 #1) 기본 버튼 --클릭 이벤트 콜백함수 처리 대신 if문으로 처리
@@ -212,9 +198,9 @@ rating = st.select_slider('평가를 선택하세요',options=["매우 아니다
 st.write(f"선택된 평가:{rating}")
 st.divider()
 
-# #-----------------------------------------
-# #8. 미디어파일 표시
-# #1)이미지 -- 이미지 라이브러리 필요 -- pillow 모듈(pip install pillow)
+#-----------------------------------------
+#8. 미디어파일 표시
+#1)이미지 -- 이미지 라이브러리 필요 -- pillow 모듈(pip install pillow)
 
 from PIL import Image
 image = Image.open("./media_files/paris.jpg")
@@ -224,90 +210,4 @@ st.audio("./media_files/old_pop.mp3")
 st.video("./media_files/trailer.mp4")
 st.divider()
 #---------------------------------------------------------------
-#9. streamlit은 HTML 을 몰라도 python의 기능으로 web page구성이됨
-# 그리고 시각화 구현도 용이
-
-# 9. 시각화를 구현하기 용이함.
-#1) 판다스의 데이타프레임(표 모양)을 이쁘게 출력 
-import pandas as pd # 설치를 해야 함. 
-
-df = pd.read_csv('./data/student.csv') # dataframe 뼈대를 만들어 줌. 테이블 같은 구조의 프레임
-print(df)
-#스트림릿으로 아주 쉽게 표형태의 데이타프레임을 출력
-st.dataframe(df)  # 분석가들이 데이타를 보여주기 위해서 쉽게 사용할 수 있음.
-st.table(df) #정적 테이블로 보여줄때.. 동적인 데이타는 안됨. 위의것은 정렬도 되었는데 여기는 안됨. 그냥 보여주기
-
-#2) json 데이터도 이쁘게 .. 출력
-st.json({
-    '이름':'홍길동',
-    '나이':24,
-    '주소':'광주'
-
-})
-st.divider()
-
-#3) 주요지표 및 통계 출력     # 데이타 분석가들이 시각화하기 용이함.
-st.metric(label='삼성전자',value='310,000원',delta='1.02%')
-st.metric(label='하이닉스',value='2,700,000원',delta='-2.25%')
-st.divider()
-#-------------------------------------------------------------
-
-#10.차트 시각화. 지도 시각화
-#1)matplotlib   # matlab의 차트를 가져옮
-import matplotlib.pyplot as plt # py plot 이라고 불림 파이플럿
-import numpy as np
-
-rand = np.random.normal(1,2,size=20) #정규분포 그래프 난수 생성(평균 , 표준편차 2 인 정규분포에서 20개 난수 생성)
-fig,ax = plt.subplots() # fig 도화지 , ax 축 : axes 
-ax.hist(rand,bins=15)
-st.pyplot(fig)
-
-
-#2) 엑셀파일의 데이터를 읽어서 그래프로 시각화 [openpyxl 모듈이 없으면 에러날 수 있음- 엑셀자동화 할때 사용.]
-student_df = pd.read_excel('./data/scores.xlsx')
-# df_chart = student_df.set_index('학번')['중간고사']  # x축값을 index값으로 , y축은 중간고사
-df_chart = student_df.set_index('학번')[['중간고사','기말고사']]  # x축값을 index값으로 , y축은 중간고사
-st.line_chart(df_chart,color=['#FF0000','#0000FF']) # 차트를 그리려면 자료를 가져와야 하는데 그게 윗라인
-
-#지도 출력
-# st.map(latitude='37.5',longitude='126.5',zoom=12)  -> 동작이 잘 안되는듯
-#데이타 프레임으로  
-
-#데이타 하나
-# df = pd.DataFrame({
-#     'lat':[37.5],
-#     'lon':[126.5]
-# })
-# st.map(df)
-
-#데이타 여러개
-df = pd.DataFrame({
-    'lat':[37.5,37.6],
-    'lon':[126.5,126.6],
-    'color':[
-        [0,255,0], #첫번째 좌표 색상
-        [255,0,0,128] #두번째 좌표 색상: 빨강 +반투명 [RGBA]
-    ]
-})
-st.map(df)
-
-
-st.divider()
-
-#12. 상태 메세지와 진행률 표시 ( 상태표시바 같은것)
-#1) 진행률 표시
-import time
-progress_bar=st.progress(0) #초기값 0
-for person in range(0,101,5):
-    time.sleep(0.5)
-    progress_bar.progress(person)
-
-#2) 스피너 - 시간이 걸리는 작업 로딩 메세지 표시
-with st.spinner('잠시만 기다려 주세요'):
-    # 이 안의 코드가 실행될때까지 spinner가 보여짐
-    time.sleep(5)
-st.success('작업완료')
-
-
-#3)축하 에니메이션
-st.balloons()
+#9. 

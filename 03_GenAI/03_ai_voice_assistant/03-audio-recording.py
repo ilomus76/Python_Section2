@@ -1,0 +1,21 @@
+#streamlit 스트림릿에서 오디오를 입력받는 방법
+
+import streamlit as st
+st.title('음성 녹음을 테스트합니다')
+
+#사용자로부터 오디오를 입력받는 기능
+audio_data = st.audio_input('마이크를 대고 말씀하세요')
+
+#녹음된 오디오 데이터가 있는지 확인
+if audio_data is not None:
+    st.success('녹음이 완료되었습니다. !')
+    #오디오 재생
+    # st.audio(audio_data,format='audio/mp3') # streamlit은 무조건 .wav만 가능 , 
+    st.audio(audio_data,format='audio/wav') # streamlit은 무조건 .wav만 가능
+
+    #파일에 저장
+    with open('recorded_audio.wav','wb') as f:
+        f.write(audio_data.getvalue())
+
+    st.write('파일 저장 완료: recorded_audio.wav')
+    st.write(audio_data.type)
