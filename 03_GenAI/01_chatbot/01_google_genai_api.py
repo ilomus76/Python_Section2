@@ -61,7 +61,7 @@ from google import genai
 
 #4. LLM 사용을 요청하는 객체 생성 
 client = genai.Client(api_key='GOOGLE_API_KEY')  #https://aistudio.google.com/api-keys
-
+#.evn 파일에 환경변수로 key를 저장할때 변수명 : GEMINI_API_KEY  - Langchain에서는 GOOGLE_API_KEY
 
 
 # 8. 모델이 응답할때 참고(사용)할 도구 주는 함수..

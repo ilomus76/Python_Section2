@@ -1,0 +1,38 @@
+# Google AI Studio [ 구글 AI 플랫폼. gemini, nano banana, tts, .. ]
+# https://aistudio.google.com
+
+
+# 가격책정 : https://ai.google.dev/gemini-api/docs/pricing?hl=ko#gemini-3-pro-preview 
+# [사이트의 오른쪽 페이지내 이동 항목에 여러모델들이 표시되어 있으며 각각 선택하면 무료 등급 사용가능 모델 확인 가능함. 아래로 스크롤을 내려도 됨.]
+
+# 가격에 사용되는 단위인 token 에 대한 의미!
+# [open ai 토큰계산기 ] : https://platform.openai.com/tokenizer
+# [google ai studio 토큰 이해 및 계산 ] : https://ai.google.dev/gemini-api/docs/tokens?hl=ko&lang=python
+
+
+# Google AI Studio(Gemini) API
+# https://ai.google.dev/gemini-api/docs?hl=ko [언어별 가이드 있음.]
+# 아래 [레고 시작하기] -- 가이드 순서.
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+# OPEN AI 에서 제공하는 LLM OPEN API
+
+# https://openai.com/ko-KR/api/
+
+# API 플랫폼 : https://platform.openai.com/
+# API 가격 : https://openai.com/ko-KR/api/pricing/
+# 모델별 모든가격  : https://platform.openai.com/docs/pricing
+
+# 결제 설정 (가장 중요)
+# 월 한도 강제 걸기 https://platform.openai.com/account/billing/limits
+
+# 추천 값 : 
+# Monthly spending limit: $1 (또는 $2)
+# Hard limit ON
+# 이러면 1달 최대 1달러 이상 절대 안 나감
+
+# 교육원 지원 금액
+# 개인 (총 11$)
+# 오픈API   11 달러
