@@ -11,7 +11,7 @@ from langchain_openai import ChatOpenAI
 model = ChatOpenAI(
     temperature=1 ,#0.1,
     max_completion_tokens=5000,
-    model='gpt-4o-mini',    
+    model='gpt-4o-mini',   
     
     )
 
@@ -104,7 +104,7 @@ chatbot_memory = RunnableWithMessageHistory(
     chatbot, 
     # 함수의 주소를 받는 변수 에 lambda 함수로 전달 , 변수를 session_id를 
     get_session_history= lambda session_id:session_messages[session_id],  # lambda 함수 ( 자바스크립트의 화살표합수 같은 것)
-    input_messages_key='input',
+    input_messages_key='input',      # 템플릿의 변수를 여기서는 input_messages_key,history_messages_key 로 사용하는데 이것은 정해져 있다고 함. 나중에 변수명을 변경해서 테스트 해 봐라. history_messages_key 를 history1_messages_key = 'history1'
     history_messages_key='history'
 )
 
