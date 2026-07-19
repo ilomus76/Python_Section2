@@ -323,8 +323,7 @@ if __name__ =="__main__":
     if tavily_key is None:
         tavily_key = st.secrets["TAVILY_API_KEY"]
 
-    if tavily_key is None:
-        tavily_key = st.secrets.get("TAVILY_API_KEY")
+
 
 
     if api_key is None:
@@ -335,8 +334,8 @@ if __name__ =="__main__":
     webbrowser.open("https://www.openai.com")
     # total usage : $0.69 / $10.00 untl July 18
     # embeddings = OpenAIEmbeddings(model='text-embedding-ada-002')
-    # embeddings = OpenAIEmbeddings(model='text-embedding-ada-002',api_key=api_key) 
-    embeddings = OpenAIEmbeddings(model="text-embedding-3-small",api_key=api_key)
+    embeddings = OpenAIEmbeddings(model='text-embedding-ada-002',api_key=api_key) 
+    # embeddings = OpenAIEmbeddings(model="text-embedding-3-small",api_key=api_key)
     #정확히는 "객체를 생성하는 것"은 비용이 없고, "임베딩을 생성하는 순간" 비용이 발생합니다.
 
 
@@ -460,21 +459,21 @@ if __name__ =="__main__":
 
 
 
-    ##def vector_search(question): 로 Vector 검색을 먼저 실행하고 없으면 Tavily 호출
-    # tools = [ document_tool, tavily_tool ]
 
-    # agent = create_agent(
-    #     model=model,
-    #     tools=tools,
-    #     system_prompt="""
-    #     당신은 카메라 개발 전문가 AI입니다.
+    tools = [ document_tool, tavily_tool ]
 
-    #     질문에 답할 때:
-    #     - 먼저 내부 문서를 검색합니다.
-    #     - 문서에 없으면 웹 검색을 사용합니다.
-    #     - 근거 없는 답변은 하지 않습니다.   
-    #     """
-    # )
+    agent = create_agent(
+        model=model,
+        tools=tools,
+        system_prompt="""
+        당신은 카메라 개발 전문가 AI입니다.
+
+        질문에 답할 때:
+        - 먼저 내부 문서를 검색합니다.
+        - 문서에 없으면 웹 검색을 사용합니다.
+        - 근거 없는 답변은 하지 않습니다.   
+        """
+    )
 
 
 
@@ -667,16 +666,6 @@ if __name__ =="__main__":
     # ---------------------------------------------
     # RAG 응답 함수
     # ---------------------------------------------
-
-    def vector_search(question):
-        docs = retriever.invoke(question)
-        if len(docs) == 0:
-            return None
-        context = "\n\n".join(
-            [doc.page_content for doc in docs]
-        )
-        return context
-
     def get_response(input_question):
 
         # RAG 호출
@@ -736,67 +725,14 @@ if __name__ =="__main__":
             # answer = response["answer"]
 
             
-            # response = agent.invoke(
-            #     {
-            #         "messages": [
-            #             ("user", question)
-            #         ]
-            #     }
-            # )
-            # answer = response["messages"][-1].content
-
-            ###############################################
-
-            # ① Vector DB 먼저 검색
-            vector_result = vector_search(question)
-
-
-            if vector_result:
-
-
-                prompt_text = f"""
-                    다음 문서를 참고해서 답변하세요.
-
-                    문서:
-                    {vector_result}
-
-
-                    질문:
-                    {question}
-                """
-
-                response = model.invoke(prompt_text)
-                answer = response.content
-
-
-            else:
-
-                # ② Vector DB에 없으면 Tavily 사용
-                response = tavily_tool.invoke(
-                    {
-                        "query": question
-                    }
-                )
-
-                web_context = response
-
-                prompt_text = f"""
-                다음 웹 검색 결과를 참고해서 답변하세요.
-
-                검색결과:
-                {web_context}
-
-
-                질문:
-                {question}
-                """
-
-                response = model.invoke(prompt_text)
-
-                answer = response.content
-            ################################################
-
-
+            response = agent.invoke(
+                {
+                    "messages": [
+                        ("user", question)
+                    ]
+                }
+            )
+            answer = response["messages"][-1].content
 
 
             # 테스트용
