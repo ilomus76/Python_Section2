@@ -35,6 +35,13 @@ st.markdown('- openai')  # - 블릿기호
 st.markdown('- google genai')
 st.markdown('---') #수평선 hr
 
+# 내가 찾은 정보
+# Streamlit에서 Markdown이 필요한 이유는 텍스트를 보기 좋게 표현하기 위해서입니다. 
+# Streamlit은 웹페이지를 만드는 프레임워크이기 때문에 단순한 문자열을 출력하는 것보다 제목, 목록, 링크, 코드 등을 쉽게 표현할 수 있도록 Markdown을 지원합니다.
+
+
+
+
 
 #streamlit 이 버전업이 되면서 그냥 write()기능에 마크다운을 써도 인식됨
 st.write('**마크다운 잘됨**')  # ai가 잘씀. 논문쓸때 이것으로 ai가 썼는지 판단가능
@@ -84,7 +91,7 @@ st.latex(r'c = \sqrt{a^{2}+b^{2}}',width='content')
 st.latex(r'\sigma(x) = \frac{1}{1 + e^{-x}}')   # r : 리버스  , \를 못알아보니. r 
 
 #기본적으로 streamlit글시를 색상을 지정하는 문법이 없음. 
-# 대신 글씨의 성질에 따라 다른 색상ㅇ르로 표시하는 기능이 있음.
+# 대신 글씨의 성질에 따라 다른 색상으로 표시하는 기능이 있음.
 st.success('정상 처리 완료')
 st.warning('주의 필요')
 st.error('에러발생')
@@ -99,7 +106,7 @@ st.divider() # 가로 구분석 ( hr 의 마크다운 : hr과 같은 기능)
 #6. 사용자 입력 받기
 #1) 글씨 입력 
 name = st.text_input('이름을 입력하세요.') #enter를 치면 입력돼ㅣㅁ
-st.write(f"입력된 이름 :{name}")
+st.write(f"입력된 이름 :{name}")  # 파이썬의 f-string 
 st.divider()
 
 #2) 숫자 입력

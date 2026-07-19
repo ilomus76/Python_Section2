@@ -1,0 +1,16 @@
+openai
+dotenv
+streamlit
+requests
+pyPDF
+pymupdf
+pdfplumber
+langchain
+langchain-community
+langchain-openai
+langchain-text-splitters 
+langchain-community
+langchain_chroma
+langchain_classic
+tavily-python 
+chromadb

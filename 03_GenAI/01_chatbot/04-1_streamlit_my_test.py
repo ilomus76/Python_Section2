@@ -30,7 +30,7 @@ import pydeck as pdk
 
 # import streamlit as st
 
-st.title("Hello Streamlit-er 👋")
+st.title("Hello Streamlit-er 👋") # 이모지 : windown key + . 
 
 
 #Streamlit Markdown의 색상 문법 :rainvow[so much] : so much를 무지개 문법으로 표현해라
