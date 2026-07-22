@@ -34,7 +34,7 @@ english_agent = Agent(
 #------------------------------------------------------
 
 #4. agent에게 답변을 요청
-# result = Runner.run_sync(english_agent,'hello') # 다음 작업을 할때까지 아무것도 안할게
+# result = Runner.run_sync(english_agent,'hello') # 결과를 줄때까지 아무것도 안할게
 # print(result.final_output) #내부적으로 기억을 하기 때문에 마지막 결과를 받으라는 말.
 
 # # Hello! How are you today? 질문에 질문을 하고 있음 . 

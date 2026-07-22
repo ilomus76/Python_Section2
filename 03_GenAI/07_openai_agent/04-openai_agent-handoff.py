@@ -20,7 +20,7 @@ history_agent = Agent(
     instructions='''역사 질문에 답하는 전문가입니다.''',
 )
 
-#문제 해결에 적절한 agent를 조절하는 라우터용 Agent..즉, 여러 Agent를 오케스트레이션(혹은 슈퍼바이저:랭체인에서는 슈퍼바이저라고 함) 하는 메인 Agent 
+#문제 해결에 적절한 agent를 조절하는 라우터용 Agent..즉, 여러 Agent를 오케스트레이션(혹은 슈퍼바이저 supervisor:랭체인에서는 슈퍼바이저라고 함) 하는 메인 Agent 
 router = Agent(
     name='감독 에이전트',
     model='gpt-4o-mini',

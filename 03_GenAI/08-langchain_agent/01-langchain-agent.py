@@ -26,7 +26,7 @@ def multiply(a:int,b:int)->int: # 스키마를 쓰지 않아도 되지만 자료
 #4. Agent 생성
 from langchain.agents import create_agent  # create_react_agent : representation and act 에서 나온거였다 . 이것은 얼마전까지 쓰던거.
 agent= create_agent(
-    model = model , # 이 모델은 다른 AI회사의 LLM로 변경해도 됨. [모델초상화]
+    model = model , # 이 모델은 다른 AI회사의 LLM로 변경해도 됨. [모델추상화]
     tools=[multiply]
 )
 
@@ -73,7 +73,7 @@ print('='*30)
 print()
 
 #7. 대화 메모리 사용 #pip install langgraph
-from langgraph.checkpoint.memory import InMemorySaver # 컴퓨터 구조의 자료구조. 노드들끼리 이어주는 자료구조... 
+from langgraph.checkpoint.memory import InMemorySaver # 컴퓨터 구조의 자료구조.스택/큐/노드/그래프구조.. 노드들끼리 이어주는 자료구조... 
 memory= InMemorySaver()
 agent = create_agent(
     model=model,

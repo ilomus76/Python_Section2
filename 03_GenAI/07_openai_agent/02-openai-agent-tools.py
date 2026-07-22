@@ -7,7 +7,7 @@ from agents import Agent,Runner, function_tool # 객체, 객체, 함수
 
 #도구(LLM이 답변할 도구 , web search file search function)로 사용할 함수 만들기 --데코레이션 @
 
-#데코레이션 @
+#데코레이션 @  : 나는 툴로서 사용되는 함수다 
 @function_tool    
 def get_weather(city:str)->str:  #파라미터와 리턴값을 자료형을 명시 . # 화살표 함수 , string을 city로 받고 답변을 str으로 준다라는 표현
     """도시의 날씨를 조회합니다."""

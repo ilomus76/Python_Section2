@@ -15,7 +15,7 @@ def open_notepad(response:str):
     # C:\Users\Admin>where notepad
     # C:\Windows\System32\notepad.exe
     # C:\Windows\notepad.exe
-    # C:\Users\Admin\AppData\Local\Microsoft\WindowsApps\notepad.exe 
+    # C:\Users\Admin\AppData\Local\Microsoft\WindowsApps\notepad.exe   <- 이것이 퍼미션이 따로 없어 사용.
 
     #### RPA 수업 때 한것임 #######################################
     #2) 메모장 앱이 실행되길 잠시 대기 한 후 글 작성 
